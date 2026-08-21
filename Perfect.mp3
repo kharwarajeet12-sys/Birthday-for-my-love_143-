@@ -1,0 +1,13 @@
+<audio id="perfectSong" autoplay loop>
+    <source src="Perfect.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+    const song = document.getElementById("perfectSong");
+
+    song.play().catch(function () {
+        console.log("Browser ne autoplay block kar diya.");
+    });
+});
+</script>
