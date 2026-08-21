@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Love Varsha ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    background:
+      radial-gradient(circle at top,#700052,#26001f 50%,#070007);
+    color:white;
+}
+
+.container{
+    width:92%;
+    max-width:430px;
+    position:relative;
+    z-index:10;
+}
+
+.page{
+    display:none;
+    text-align:center;
+    padding:35px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.25);
+    backdrop-filter:blur(18px);
+    box-shadow:
+      0 0 40px rgba(255,0,130,.3),
+      inset 0 0 20px rgba(255,255,255,.05);
+    animation:openPage .8s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes openPage{
+    0%{
+        opacity:0;
+        transform:scale(.65) translateY(50px);
+    }
+    70%{
+        transform:scale(1.04);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.title{
+    font-size:35px;
+    margin:15px 0;
+    background:linear-gradient(90deg,#ff4c9a,#fff,#ff4c9a);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.subtitle{
+    font-size:18px;
+    line-height:1.7;
+    color:#ffe4f2;
+}
+
+.big{
+    font-size:75px;
+    margin-bottom:10px;
+    animation:pulse 1.3s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+button{
+    margin:20px 6px 0;
+    padding:13px 27px;
+    border:0;
+    border-radius:50px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#ff237f,#ff68ad);
+    box-shadow:0 8px 25px rgba(255,0,120,.35);
+    cursor:pointer;
+}
+
+button:active{
+    transform:scale(.94);
+}
+
+.noBtn{
+    background:rgba(255,255,255,.15);
+}
+
+.doll{
+    font-size:120px;
+    animation:doll 2s ease-in-out infinite;
+}
+
+@keyframes doll{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px) rotate(2deg);
+    }
+}
+
+.cake{
+    font-size:120px;
+    animation:cake 1.5s infinite;
+}
+
+@keyframes cake{
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.letter{
+    margin-top:20px;
+    padding:20px;
+    border-radius:20px;
+    background:rgba(0,0,0,.20);
+    line-height:1.8;
+    color:#ffe6f2;
+}
+
+.highlight{
+    color:#ff75b7;
+    font-weight:bold;
+}
+
+.songBox{
+    margin-top:25px;
+    padding:18px;
+    border-radius:20px;
+    background:rgba(0,0,0,.25);
+}
+
+audio{
+    width:100%;
+    margin-top:15px;
+}
+
+.small{
+    margin-top:15px;
+    font-size:12px;
+    opacity:.65;
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    top:-30px;
+    pointer-events:none;
+    animation:fall linear infinite;
+    opacity:.8;
+    z-index:1;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<script>
+const hearts=["❤️","💗","💕","💖","💘","💝"];
+
+for(let i=0;i<25;i++){
+
+    let h=document.createElement("div");
+
+    h.className="heart";
+
+    h.innerHTML=
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    h.style.left=Math.random()*100+"vw";
+
+    h.style.fontSize=
+        (14+Math.random()*18)+"px";
+
+    h.style.animationDuration=
+        (4+Math.random()*5)+"s";
+
+    h.style.animationDelay=
+        Math.random()*5+"s";
+
+    document.body.appendChild(h);
+}
+</script>
+
+
+<div class="container">
+
+
+<!-- ================= PAGE 1 ================= -->
+
+<div class="page active" id="page1">
+
+    <div class="big">💌</div>
+
+    <h1 class="title">
+        Hello Varsha ❤️
+    </h1>
+
+    <p class="subtitle">
+        Mere paas tumhare liye ek chhota sa
+        surprise hai... 🥺
+        <br><br>
+        Kya tum open karogi?
+    </p>
+
+    <button onclick="openPage(2)">
+        YES ❤️
+    </button>
+
+    <button class="noBtn" onclick="noMessage()">
+        NO 🙈
+    </button>
+
+    <p id="noText" class="small"></p>
+
+</div>
+
+
+<!-- ================= PAGE 2 ================= -->
+
+<div class="page" id="page2">
+
+    <div class="doll">
+        🧸
+    </div>
+
+    <h1 class="title">
+        For You 💗
+    </h1>
+
+    <p class="subtitle">
+        Ye cute si doll sirf tumhare
+        liye hai, Varsha. 🥰
+        <br><br>
+        Lekin surprise abhi baaki hai...
+    </p>
+
+    <button onclick="openPage(3)">
+        NEXT SURPRISE ✨
+    </button>
+
+</div>
+
+
+<!-- ================= PAGE 3 ================= -->
+
+<div class="page" id="page3">
+
+    <div class="big">
+        🎁
+    </div>
+
+    <h1 class="title">
+        HAPPY BIRTHDAY
+    </h1>
+
+    <p class="subtitle">
+        <span class="highlight">
+            Varsha ❤️
+        </span>
+        <br><br>
+
+        Aaj ka din bahut special hai,
+        kyunki aaj ek bahut special person
+        ka birthday hai. 🎂✨
+    </p>
+
+    <button onclick="openPage(4)">
+        OPEN NEXT 🎀
+    </button>
+
+</div>
+
+
+<!-- ================= PAGE 4 ================= -->
+
+<div class="page" id="page4">
+
+    <div class="cake">
+        🎂
+    </div>
+
+    <h1 class="title">
+        Happy Birthday Varsha 🎂
+    </h1>
+
+    <p class="subtitle">
+        Cake ka ek piece mere taraf se... ❤️
+        <br>
+        Aur saari happiness tumhare naam. ✨
+    </p>
+
+    <button onclick="openPage(5)">
+        DIL KI BAAT ❤️
+    </button>
+
+</div>
+
+
+<!-- ================= PAGE 5 ================= -->
+
+<div class="page" id="page5">
+
+    <div class="big">
+        ❤️
+    </div>
+
+    <h1 class="title">
+        Dil Se...
+    </h1>
+
+    <div class="letter">
+
+        Varsha,
+
+        <br><br>
+
+        Kabhi-kabhi kuch log life mein
+        bina kisi planning ke aa jaate hain,
+        lekin dheere-dheere woh
+        bahut special ban jaate hain. ❤️
+
+        <br><br>
+
+        Tum bhi mere liye
+        <span class="highlight">
+        bahut special ho.
+        </span>
+
+        <br><br>
+
+        Tumhari smile hamesha bani rahe,
+        tum khush raho aur tumhare
+        saare dreams pure ho. 🥺💗
+
+        <br><br>
+
+        Bas ye chhoti si wish
+        dil se tumhare liye hai. ❤️
+
+    </div>
+
+    <button onclick="openPage(6)">
+        FINAL SURPRISE 💖
+    </button>
+
+</div>
+
+
+<!-- ================= PAGE 6 ================= -->
+
+<div class="page" id="page6">
+
+    <div class="big">
+        💖
+    </div>
+
+    <h1 class="title">
+        My Love Varsha
+    </h1>
+
+    <p class="subtitle">
+
+        Finally... ❤️
+
+        <br><br>
+
+        <span class="highlight">
+        This little surprise is just for you.
+        </span>
+
+        <br><br>
+
+        Happy Birthday, Varsha 🎂💗
+
+        <br><br>
+
+        Always Keep Smiling ❤️
+
+    </p>
+
+
+    <!-- SONG -->
+
+    <div class="songBox">
+
+        🎵
+        <b>Perfect — Ed Sheeran</b>
+
+        <audio
+            id="perfectSong"
+            preload="auto"
+            controls>
+
+            <source
+                src="Perfect.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+    </div>
+
+    <p class="small">
+        Made with ❤️ specially for Varsha
+    </p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openPage(number){
+
+    document.querySelectorAll(".page")
+    .forEach(function(page){
+        page.classList.remove("active");
+    });
+
+    document
+    .getElementById("page"+number)
+    .classList.add("active");
+
+
+    /* PAGE 6 = SONG */
+
+    if(number === 6){
+
+        const song =
+        document.getElementById("perfectSong");
+
+        song.currentTime = 0;
+
+        song.play().catch(function(){
+
+            /*
+            Browser autoplay block
+            kar sakta hai.
+            */
+
+            console.log(
+                "Autoplay browser ne block kiya."
+            );
+
+        });
+    }
+}
+
+
+function noMessage(){
+
+    document.getElementById("noText").innerHTML =
+    "Ek baar YES try karo na 🥺❤️";
+
+}
+
+</script>
+
+</body>
+  </html>
